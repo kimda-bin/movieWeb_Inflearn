@@ -15,7 +15,8 @@ function Favorite(props) {
     };
 
     Axios.post("/api/favorite/favoriteNumber", variables).then((response) => {
-      if (response.date.success) {
+      console.log(response.data);
+      if (response.data.success) {
       } else {
         alert("숫자 정보를 가져오는데 실패 했습니다.");
       }

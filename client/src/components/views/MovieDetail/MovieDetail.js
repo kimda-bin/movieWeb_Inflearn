@@ -16,6 +16,8 @@ function MovieDetail(props) {
     let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     let endpointInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
 
+    console.log("무비디테일");
+
     //axios와 같은 역할을 한다!
     //밑은 fetch의 기본형태
     fetch(endpointInfo)
@@ -29,7 +31,7 @@ function MovieDetail(props) {
       .then((response) => {
         setCasts(response.cast);
       });
-  });
+  }, []);
 
   const toggleActorView = () => {
     setActorToggle(!ActorToggle);
